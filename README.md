@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 
-=======
 # my-github
 ## 💻 Tech Stack
 
@@ -17,7 +15,7 @@
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Git Bash](https://img.shields.io/badge/Git--Bash-353535?style=for-the-badge&logo=git&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS--Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)
->>>>>>> 366259f (My Favorits Stack)
+
 
 # comandos importantes:
 # Comando                     | Descrição                           |
