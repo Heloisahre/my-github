@@ -49,6 +49,9 @@ Ele é essencial em projetos colaborativos, pois permite que o código seja **re
 
 
 ✏️ Fazer alterações no código e salvar mudanças:
-
 git add .
 git commit -m "feat: adiciona nova funcionalidade X"
+
+🚀 Enviar a branch para o repositório remoto
+
+git push origin feature/nova-funcionalidade
