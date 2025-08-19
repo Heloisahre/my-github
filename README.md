@@ -55,3 +55,25 @@ git commit -m "feat: adiciona nova funcionalidade X"
 🚀 Enviar a branch para o repositório remoto
 
 git push origin feature/nova-funcionalidade
+
+🔃 Abrir o Pull Request no GitHub
+
+Vá até o repositório no GitHub.
+
+Clique em Compare & Pull Request.
+
+Selecione a branch base (main) e a sua branch (feature/...).
+
+Escreva um título claro e uma descrição explicando as mudanças.
+
+👀 Revisão
+
+Outros colaboradores revisam, comentam e sugerem melhorias.
+
+Você pode ajustar o código se necessário.
+
+✅ Merge
+
+Quando aprovado, o PR é integrado à branch principal.
+
+A branch pode ser apagada após o merge.
