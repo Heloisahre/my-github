@@ -33,3 +33,16 @@
 | 🌿 `git branch`             | Lista ou cria branches                  |
 | 🔀 `git merge`              | Mescla branches                         |
 | 📜 `git log --oneline --graph` | Exibe histórico de commits compacto |
+
+# 🔄 Guia de Pull Request (PR)
+
+Um **Pull Request (PR)** é um pedido para que alterações feitas em uma **branch** sejam revisadas e integradas na branch principal (`main` ou `master`).  
+Ele é essencial em projetos colaborativos, pois permite que o código seja **revisado, discutido e aprovado** antes do merge.
+
+---
+
+## ⚙️ Fluxo de um Pull Request
+
+1. 🌱 **Criar uma nova branch**
+   ```bash
+   git checkout -b feature/nova-funcionalidade
