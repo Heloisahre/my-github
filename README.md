@@ -46,3 +46,9 @@ Ele é essencial em projetos colaborativos, pois permite que o código seja **re
 1. 🌱 **Criar uma nova branch**
    ```bash
    git checkout -b feature/nova-funcionalidade
+
+
+✏️ Fazer alterações no código e salvar mudanças:
+
+git add .
+git commit -m "feat: adiciona nova funcionalidade X"
