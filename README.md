@@ -138,3 +138,21 @@ Este guia reúne **boas práticas de uso do Git** para manter repositórios limp
 - Dica: use **`git checkout -b`** para criar e já trocar de branch:
 ```bash
 git checkout -b feature/login
+
+📖 Resumo do Fluxo Ideal
+
+🌱 Criar branch → git checkout -b feature/minha-tarefa
+
+✏️ Alterar arquivos e testar
+
+➕ Adicionar mudanças → git add .
+
+💾 Commit claro → git commit -m "feat: adiciona nova função"
+
+🚀 Push → git push origin feature/minha-tarefa
+
+🔃 Abrir Pull Request
+
+👀 Revisão e aprovação
+
+✅ Merge na main
