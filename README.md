@@ -77,3 +77,15 @@ Você pode ajustar o código se necessário.
 Quando aprovado, o PR é integrado à branch principal.
 
 A branch pode ser apagada após o merge.
+
+✅ Boas Práticas em Pull Requests
+
+🔹 Commits pequenos e organizados → facilitam a revisão.
+
+🔹 Título e descrição claros → explique o que mudou e por quê.
+
+🔹 Referencie issues → se resolver um problema, use Closes #123.
+
+🔹 Revise seu código antes de abrir o PR.
+
+🔹 Teste suas mudanças → evite quebrar funcionalidades já existentes.
