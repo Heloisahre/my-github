@@ -103,3 +103,38 @@ Este guia reúne **boas práticas de uso do Git** para manter repositórios limp
   - Gere um `.gitignore` customizado em: [gitignore.io](https://www.toptal.com/developers/gitignore).  
 
 - 🔹 Estruture o repositório de forma clara:
+
+
+---
+
+## 💾 Commits
+
+- Faça **commits pequenos e frequentes** (atômicos).  
+- Escreva mensagens claras seguindo um padrão.  
+- **Formato recomendado (Conventional Commits):**
+  ```
+  tipo: descrição breve
+  ```
+  Exemplos:
+  - `feat: adiciona tela de login`
+  - `fix: corrige bug no cálculo de desconto`
+  - `docs: atualiza README com instruções`
+  - `refactor: melhora organização do código`
+
+- Evite mensagens vagas:
+- ❌ "update", "teste", "coisas novas"  
+- ✅ "fix: corrige erro de autenticação no login"
+
+---
+
+## 🌿 Branches
+
+- Nunca trabalhe diretamente na `main`/`master`.  
+- Use branches descritivas para cada tarefa:
+- `feature/nova-funcionalidade`  
+- `fix/corrigir-bug-login`  
+- `docs/atualizar-readme`  
+
+- Dica: use **`git checkout -b`** para criar e já trocar de branch:
+```bash
+git checkout -b feature/login
