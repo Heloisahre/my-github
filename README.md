@@ -89,3 +89,17 @@ A branch pode ser apagada após o merge.
 🔹 Revise seu código antes de abrir o PR.
 
 🔹 Teste suas mudanças → evite quebrar funcionalidades já existentes.
+
+# 📘 Boas Práticas em Git
+
+Este guia reúne **boas práticas de uso do Git** para manter repositórios limpos, organizados e fáceis de colaborar.  
+
+---
+
+## 🗂️ Organização do Repositório
+
+- 🔹 Use sempre um **`.gitignore`** adequado ao projeto.  
+  - Evite subir arquivos desnecessários: `node_modules/`, `__pycache__/`, `.env`, logs, arquivos temporários etc.  
+  - Gere um `.gitignore` customizado em: [gitignore.io](https://www.toptal.com/developers/gitignore).  
+
+- 🔹 Estruture o repositório de forma clara:
