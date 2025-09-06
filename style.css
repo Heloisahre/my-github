@@ -1,0 +1,232 @@
+:root {
+    --bg: #0b1020;
+    --panel: #121831;
+    --text: #eaf2ff;
+    --muted: #a9b4d0;
+    --accent: #6aa4ff;
+    --ok: #3ad29f;
+    --warn: #ffe08a;
+    --bad: #ff7a7a;
+    --code-bg: #0d142a;
+    --border: #2a335a;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #f7f9ff;
+        --panel: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --accent: #2563eb;
+        --ok: #10b981;
+        --warn: #a16207;
+        --bad: #dc2626;
+        --code-bg: #0f172a08;
+        --border: #e2e8f0;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Header */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    backdrop-filter: blur(10px);
+    background: color-mix(in oklab, var(--bg), transparent 35%);
+    border-bottom: 1px solid var(--border);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .75rem;
+    padding: 1.2rem 0;
+}
+
+.title {
+    font-weight: 800;
+    letter-spacing: .2px;
+    font-size: clamp(1.4rem, 1.1rem + 2vw, 2.1rem);
+    margin: 0;
+}
+
+.subtitle {
+    margin: 0;
+    color: var(--muted);
+}
+
+nav.toc {
+    margin-top: .6rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+nav.toc a {
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid var(--border);
+    background: var(--panel);
+    padding: .45rem .65rem;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+nav.toc a:hover {
+    outline: 2px solid color-mix(in oklab, var(--accent), transparent 65%);
+}
+
+/* Layout geral */
+main {
+    padding: 1.2rem 0 2.5rem;
+}
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.panel h2 {
+    margin-top: .2rem;
+    font-size: 1.2rem;
+}
+
+.panel h3 {
+    margin-top: 1rem;
+    font-size: 1.05rem;
+}
+
+.panel p,
+.panel li {
+    color: var(--text);
+}
+
+.grid {
+    display: grid;
+    gap: .8rem;
+}
+
+@media (min-width: 900px) {
+    .grid-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Chamadas / dicas */
+.badge {
+    font-size: .75rem;
+    font-weight: 700;
+    color: var(--text);
+    background: color-mix(in oklab, var(--accent), transparent 70%);
+    border: 1px solid var(--border);
+    padding: .15rem .5rem;
+    border-radius: 999px;
+}
+
+.tip {
+    border-left: 3px solid var(--accent);
+    padding: .6rem .8rem;
+    background: color-mix(in oklab, var(--panel), transparent 20%);
+    border-radius: 8px;
+}
+
+.tip.ok {
+    border-left-color: var(--ok);
+}
+
+.tip.warn {
+    border-left-color: var(--warn);
+}
+
+.tip.bad {
+    border-left-color: var(--bad);
+}
+
+/* Código */
+code,
+pre {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+pre {
+    background: var(--code-bg);
+    padding: .85rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    overflow: auto;
+}
+
+code.inline {
+    background: var(--code-bg);
+    padding: .1rem .3rem;
+    border-radius: .35rem;
+    border: 1px solid var(--border);
+}
+
+/* Listas e tipografia */
+ul,
+ol {
+    padding-left: 1.2rem;
+}
+
+li {
+    margin: .2rem 0;
+}
+
+/* Tabelas (caso use) */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+th,
+td {
+    padding: .6rem .7rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+
+th {
+    text-align: left;
+    background: color-mix(in oklab, var(--panel), transparent 10%);
+}
+
+/* Footer */
+.site-footer {
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.site-footer small {
+    opacity: .8;
+}
