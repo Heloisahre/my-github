@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guia Rápido: Git & GitHub</title>
+    <meta name="description" content="Conceitos de Git e GitHub, fluxos de trabalho e como resolver conflitos." />
+    <!-- CSS externo (confira se o nome do arquivo confere com o seu: style.css) -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- HEADER: área superior com título, subtítulo e navegação por âncoras (TOC) -->
+    <header class="site-header">
+        <div class="container hero">
+            <h1 class="title">Guia Rápido: Git & GitHub</h1>
+            <p class="subtitle">Conceitos essenciais, fluxos de trabalho e resolução de conflitos para uso no dia a dia.
+            </p>
+
+            <!-- TOC: links que levam para as seções da própria página -->
+            <nav class="toc" aria-label="Navegação por seções">
+                <a href="#conceitos">Conceitos</a>
+                <a href="#fluxos">Fluxos</a>
+                <a href="#conflitos">Resolver Conflitos</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN: conteúdo principal, organizado em três seções -->
+    <main class="container">
+        <!-- Seção: Conceitos (definições, vocabulário e comandos essenciais) -->
+        <section id="conceitos" class="panel">
+            <h2>Conceitos de Git & GitHub</h2>
+
+            <!-- grid-2: duas colunas (artigos lado a lado em telas largas) -->
+            <div class="grid grid-2">
+                <!-- Coluna 1: definições e termos básicos -->
+                <article>
+                    <h3>Git × GitHub</h3>
+                    <ul>
+                        <li><strong>Git</strong>: sistema de controle de versão <em>distribuído</em> que roda na sua
+                            máquina.</li>
+                        <li><strong>GitHub</strong>: plataforma de hospedagem de repositórios Git na nuvem (issues, PRs,
+                            wiki, CI, etc.).</li>
+                    </ul>
+
+                    <h3>Termos essenciais</h3>
+                    <ul>
+                        <li><strong>Repositório (repo)</strong>: pasta versionada que guarda histórico.</li>
+                        <li><strong>Commit</strong>: “foto” das alterações + mensagem descritiva.</li>
+                        <li><strong>Branch</strong>: linha de desenvolvimento (ex.: <code class="inline">main</code>,
+                            <code class="inline">feature/x</code>).
+                        </li>
+                        <li><strong>Remote</strong>: repositório hospedado (ex.: <code class="inline">origin</code> no
+                            GitHub).</li>
+                        <li><strong>Clone</strong>: cópia local de um repositório remoto.</li>
+                        <li><strong>Fork</strong>: cópia do repo na sua conta GitHub para colaborar sem acesso de
+                            escrita.</li>
+                        <li><strong>Pull Request (PR)</strong>: proposta para mesclar sua branch em outra (revisão +
+                            CI).</li>
+                        <li><strong>Stash</strong>: guarda mudanças temporariamente sem commitar.</li>
+                        <li><strong>Tag/Release</strong>: marca um ponto do histórico (ex.: <code
+                                class="inline">v1.0.0</code>).</li>
+                    </ul>
+                </article>
+
+                <!-- Coluna 2: comandos práticos mais usados no dia a dia -->
+                <article>
+                    <h3>Comandos básicos</h3>
+                    <!-- Snippet: inicia repo, versiona, cria branch, sincroniza com remoto e atualiza com rebase -->
+                    <pre><code>git init                      # inicia repo local
+git clone &lt;url&gt;               # clona repo remoto
+
+git status                    # estado atual
+git add &lt;arquivos&gt;            # prepara para commit (stage)
+git commit -m "mensagem"       # salva snapshot
+
+git branch                    # lista branches
+git switch -c feature/x       # cria e troca para nova branch
+
+git remote -v                 # remotes configurados
+git push -u origin feature/x  # envia branch para remoto
+
+git pull --rebase origin main # atualiza sua branch
+</code></pre>
+                </article>
+            </div>
+        </section>
+
+        <!-- Seção: Fluxos (duas abordagens comuns: GitHub Flow e Git Flow) -->
+        <section id="fluxos" class="panel">
+            <h2>Fluxos de Git & GitHub</h2>
+
+            <div class="grid grid-2">
+                <!-- Coluna 1: GitHub Flow (simples, orientado a PR direto da main) -->
+                <article>
+                    <h3>GitHub Flow (simples e moderno)</h3>
+                    <ol>
+                        <li>Criar <strong>branch</strong> a partir de <code class="inline">main</code>.</li>
+                        <li>Fazer <strong>commits</strong> pequenos e claros.</li>
+                        <li><strong>Push</strong> para o remoto.</li>
+                        <li>Abrir <strong>Pull Request</strong> (descrição, checklist, referência a issues).</li>
+                        <li>Passar em <strong>CI</strong> e <strong>code review</strong>.</li>
+                        <li><strong>Squash &amp; Merge</strong> na <code class="inline">main</code>, remover branch.
+                        </li>
+                        <li><strong>Tag/Release</strong> opcional para versões.</li>
+                    </ol>
+                </article>
+
+                <!-- Coluna 2: Git Flow (estratégia com develop + release/hotfix) -->
+                <article>
+                    <h3>Git Flow (projetos com releases)</h3>
+                    <ul>
+                        <li><code class="inline">main</code>: versões estáveis (tags).</li>
+                        <li><code class="inline">develop</code>: integra features antes de ir para main.</li>
+                        <li><code class="inline">feature/*</code>, <code class="inline">release/*</code>, <code
+                                class="inline">hotfix/*</code> para organizar entregas.</li>
+                    </ul>
+                    <!-- Exemplo: ciclo resumido de trabalho com develop/feature/release -->
+                    <pre><code># exemplo de ciclo
+# 1) partir de develop
+git switch develop
+git switch -c feature/login
+# 2) trabalhar/commitar/push
+# 3) PR: feature/login -&gt; develop
+# 4) release/* -&gt; testes
+# 5) merge em main + tag</code></pre>
+                </article>
+            </div>
+
+            <!-- Dica: práticas para padronizar e agilizar revisão e CI -->
+            <div class="tip ok" role="note">
+                Dica: padronize mensagens de commit, template de PR e convenções de nome de branch para agilizar o
+                review.
+            </div>
+        </section>
+
+        <!-- Seção: Conflitos (como acontecem e como resolver) -->
+        <section id="conflitos" class="panel">
+            <h2>Como Resolver Conflitos</h2>
+
+            <!-- Contexto: conflitos surgem quando há alterações concorrentes nas mesmas linhas -->
+            <p><strong>Quando acontece?</strong> Ao mesclar histórico diferente que altera as mesmas linhas dos mesmos
+                arquivos (ex.: <code class="inline">merge</code>, <code class="inline">rebase</code>, <code
+                    class="inline">cherry-pick</code>).</p>
+
+            <!-- Passo a passo típico ao fazer merge/pull com rebase -->
+            <h3>Passo a passo (merge)</h3>
+            <ol>
+                <li>Traga a outra branch: <code class="inline">git merge main</code> <em>ou</em> <code
+                        class="inline">git pull --rebase origin main</code>.</li>
+                <li>Abra os arquivos marcados com <code class="inline">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> e
+                    escolha/edite o conteúdo final.</li>
+                <li>Marque como resolvido e faça commit: <code class="inline">git add .</code> → <code
+                        class="inline">git commit</code>.</li>
+                <li>Finalize o merge/rebase e envie: <code class="inline">git push</code>.</li>
+            </ol>
+
+            <!-- Rebase: fluxo de resolução iterativa arquivo a arquivo -->
+            <h3>Passo a passo (rebase)</h3>
+            <pre><code>git switch feature/x
+git fetch origin
+git rebase origin/main
+# resolva conflitos arquivo a arquivo
+# edite, depois:
+git add &lt;arquivo&gt;
+git rebase --continue
+# para abortar:
+# git rebase --abort
+</code></pre>
+
+            <!-- Receituário rápido por situação comum -->
+            <h3>Receita rápida por situação</h3>
+            <ul>
+                <li><strong>Conflito ao dar pull</strong>: <code class="inline">git pull --rebase</code> → resolver →
+                    <code class="inline">git rebase --continue</code>.
+                </li>
+                <li><strong>Conflito em PR</strong>: atualize sua branch local com a base, resolva e faça push.</li>
+                <li><strong>Desfazer merge errado</strong>: <code
+                        class="inline">git reset --hard &lt;hash-anterior&gt;</code> (use com cuidado) ou <code
+                        class="inline">git revert -m 1 &lt;hash-do-merge&gt;</code>.</li>
+            </ul>
+
+            <!-- Lembrete preventivo: hábitos que reduzem a chance de conflito -->
+            <div class="tip warn" role="note">
+                Evite conflitos: sincronize com frequência, faça PRs curtos e edite arquivos diferentes quando possível.
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER: rodapé simples com nota de direitos/propósito -->
+    <footer class="site-footer container">
+        <small>&copy; 2025 Guia Git &amp; GitHub — Material estático para estudo.</small>
+    </footer>
+</body>
+
+</html>
